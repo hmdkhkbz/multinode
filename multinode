@@ -4,25 +4,25 @@ ansible_ssh_private_key_file=/home/green/.ssh/id_rsa
 # additional groups are for more control of the environment.
 [control]
 # These hostname must be resolvable from your deployment host
-controller01
-controller02
-controller03
+controller01 ansible_host=192.168.88.16
+controller02 ansible_host=192.168.88.37
+controller03 ansible_host=192.168.88.50
 
 [network]
-network01 tunnel_interface=eth3
-network02 tunnel_interface=eth3
+network01 tunnel_interface=eth3 ansible_host=192.168.88.33
+network02 tunnel_interface=eth3 ansible_host=192.168.88.28
 
 [compute]
-compute01 tunnel_interface=eth3
-compute02 tunnel_interface=eth3
+compute01 tunnel_interface=eth3 ansible_host=192.168.88.72
+compute02 tunnel_interface=eth3 ansible_host=192.168.88.38
 
 [monitoring]
-controller01
+controller01 ansible_host=192.168.88.16
 
 [storage]
-controller01
-controller02
-controller03
+controller01 ansible_host=192.168.88.16
+controller02 ansible_host=192.168.88.37
+controller03 ansible_host=192.168.88.50
 
 
 [deployment]
